@@ -1,0 +1,16 @@
+# Ignore build artifacts 
+# WordleGRPC Project
+A C# solution implementing gRPC services for Wordle-like games. It includes:
+- `WordServer`: Handles word-related services.
+- `WordleGameServer`: Manages game logic and statistics.
+- `WordleGameClient`: A console client for interacting with the servers.
+
+## How to Run
+1. Clone the repository: `git clone https://github.com/your-username/WordleGRPC.git`
+2. Open the solution in Visual Studio.
+3. Build and run the `WordServer` and `WordleGameServer`.
+4. Execute the `WordleGameClient` to interact with the servers.
+
+## Dependencies
+- .NET 6 or higher
+- gRPC NuGet packages
