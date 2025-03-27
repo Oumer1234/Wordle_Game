@@ -1,57 +1,90 @@
-﻿using System;
-using System.Threading.Tasks;
-using Grpc.Core;
+﻿using Grpc.Core;
 using Grpc.Net.Client;
 using WordleGameServer.Protos;
 
-class Program
+try
 {
-    static async Task Main()
+    Console.WriteLine("🔵 Connecting to server...");
+
+    // Configure channel with timeout
+    var channel = GrpcChannel.ForAddress("http://localhost:5031", new GrpcChannelOptions
     {
-        Console.WriteLine("🔵 Connecting to WordleGameServer...");
-        using var channel = GrpcChannel.ForAddress("http://localhost:5001"); // Update if your server runs on a different port
-        var client = new DailyWordle.DailyWordleClient(channel);
-
-        Console.WriteLine("✅ Connected! Let's play Wordle!");
-
-        using var call = client.Play();
-        while (true)
+        HttpHandler = new SocketsHttpHandler
         {
-            Console.Write("\nEnter your guess: ");
-            string guess = Console.ReadLine() ?? "";
+            PooledConnectionIdleTimeout = Timeout.InfiniteTimeSpan,
+            KeepAlivePingDelay = TimeSpan.FromSeconds(60)
+        }
+    });
 
-            if (string.IsNullOrWhiteSpace(guess))
+    var client = new DailyWordle.DailyWordleClient(channel);
+    Console.WriteLine("🟢 Connected! Let's play Wordle!\n");
+
+    // Create the streaming call
+    using var call = client.Play();
+
+    // Response handler
+    var readTask = Task.Run(async () =>
+    {
+        try
+        {
+            await foreach (var response in call.ResponseStream.ReadAllAsync())
             {
-                Console.WriteLine("❌ Invalid input. Try again.");
-                continue;
-            }
-
-            await call.RequestStream.WriteAsync(new GuessRequest { Guess = guess });
-
-            if (await call.ResponseStream.MoveNext())
-            {
-                var response = call.ResponseStream.Current;
-                Console.WriteLine($"🟡 Result: {response.Result}");
-                Console.WriteLine($"📌 Remaining guesses: {response.GuessesRemaining}");
-
-                if (response.GameWon)
+                if (response.Result == "invalid")
                 {
-                    Console.WriteLine("🎉 You won! 🎉");
-                    break;
+                    Console.WriteLine("❌ Not a valid word");
+                    return;
                 }
+
+                Console.WriteLine($"\n📊 Result: {response.Result}");
+                Console.WriteLine($"✅ Correct: {string.Join("", response.IncludedLetters)}");
+                Console.WriteLine($"❌ Wrong: {string.Join("", response.ExcludedLetters)}");
+                Console.WriteLine($"💡 Guesses left: {response.GuessesRemaining}");
+
                 if (response.GameOver)
                 {
-                    Console.WriteLine("💀 Game over! Try again tomorrow.");
-                    break;
+                    Console.WriteLine(response.GameWon ? "🎉 You won!" : "💀 Game over!");
+                    return;
                 }
             }
         }
-        await call.RequestStream.CompleteAsync();
+        catch (RpcException ex)
+        {
+            Console.WriteLine($"\n🔴 Server error: {ex.Status.Detail}");
+        }
+    });
 
-        Console.WriteLine("\n📊 Fetching game stats...");
-        var stats = await client.GetStatsAsync(new StatsRequest());
-        Console.WriteLine($"🧑‍🤝‍🧑 Total Players: {stats.TotalPlayers}");
-        Console.WriteLine($"🏆 Win Percentage: {stats.WinPercentage}%");
-        Console.WriteLine($"⌛ Average Guesses: {stats.AverageGuesses}");
+    // Game loop
+    while (true)
+    {
+        Console.Write("\n⌨️ Your guess (5 letters): ");
+        var guess = Console.ReadLine()?.Trim().ToLower();
+
+        if (guess == "quit") break;
+        if (string.IsNullOrEmpty(guess)) continue;
+
+        try
+        {
+            await call.RequestStream.WriteAsync(new GuessRequest { Guess = guess });
+        }
+        catch (RpcException ex)
+        {
+            Console.WriteLine($"\n🔴 Failed to send guess: {ex.Status.Detail}");
+            break;
+        }
+
+        if (readTask.IsCompleted) break;
     }
+
+    // Clean shutdown
+    await call.RequestStream.CompleteAsync();
+    await readTask;
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"\n🔴 Fatal error: {ex.Message}");
+}
+finally
+{
+    Console.WriteLine("\nPress any key to exit...");
+    Console.ReadKey();
 }

@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "rjQUZ8sABUUdnDdV3lc0Te6prQuv/bAEictL8g9g524=",
+  "Source": "WordleGameServer",
+  "BasePath": "_content/WordleGameServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\WordServer.csproj",
+      "Version": 2,
+      "Source": "WordServer",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

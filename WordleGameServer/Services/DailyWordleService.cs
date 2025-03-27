@@ -1,26 +1,19 @@
 ﻿using Grpc.Core;
 using Grpc.Net.Client;
 using WordleGameServer.Protos;
-using WordServer.Protos;  // ✅ Using `DailyWordGrpc.cs` from `WordServer`
+using WordServer.Protos;  // ✅ Ensure this is correctly referenced
 
 public class DailyWordleService : DailyWordle.DailyWordleBase
 {
     private readonly DailyWord.DailyWordClient _wordClient;
 
-    //public DailyWordleService()
-    //{
-    //    var channel = GrpcChannel.ForAddress("http://localhost:5101"); // Ensure WordServer is running
-    //    _wordClient = new DailyWord.DailyWordClient(channel);
-    //}
-
-    public DailyWordleService(DailyWord.DailyWordClient wordClient)
+    public DailyWordleService(DailyWord.DailyWordClient wordClient) // ✅ Inject dependency
     {
-        _wordClient = wordClient;
+        _wordClient = wordClient ?? throw new ArgumentNullException(nameof(wordClient));
     }
 
     public override async Task<StatsResponse> GetStats(StatsRequest request, ServerCallContext context)
     {
-        // Dummy stats for now
         return await Task.FromResult(new StatsResponse
         {
             TotalPlayers = 100,
@@ -28,4 +21,8 @@ public class DailyWordleService : DailyWordle.DailyWordleBase
             AverageGuesses = 4.2f
         });
     }
+
+
+
+
 }

@@ -1,21 +1,25 @@
-﻿using WordleGameServer.Services;
+﻿using Microsoft.AspNetCore.Server.Kestrel.Core;
 using WordServer.Protos;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddGrpc(); // ✅ This registers core gRPC services
-
-// Configure WordServer client
+// Add services
+builder.Services.AddGrpc();
 builder.Services.AddGrpcClient<DailyWord.DailyWordClient>(options =>
 {
-    options.Address = new Uri("https://localhost:5001"); // WordServer address
+    options.Address = new Uri("http://localhost:5293"); // WordServer address
+});
+
+// Configure Kestrel
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(5031, o => o.Protocols = HttpProtocols.Http2);
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-app.MapGrpcService<DailyWordleService>(); // Requires AddGrpc() to be called first
-app.MapGet("/", () => "Wordle Game Server is running. Use a gRPC client to access the service.");
+// Middleware pipeline
+app.MapGrpcService<DailyWordleService>();
+app.MapGet("/", () => "WordleGameServer is running. Use gRPC client to connect.");
 
 app.Run();
