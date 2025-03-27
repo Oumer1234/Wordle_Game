@@ -4,22 +4,14 @@ using WordleGameServer.Protos;
 
 try
 {
-    Console.WriteLine("🔵 Connecting to server...");
+    Console.WriteLine("🔵 Connecting to game server...");
 
-    // Configure channel with timeout
-    var channel = GrpcChannel.ForAddress("http://localhost:5031", new GrpcChannelOptions
-    {
-        HttpHandler = new SocketsHttpHandler
-        {
-            PooledConnectionIdleTimeout = Timeout.InfiniteTimeSpan,
-            KeepAlivePingDelay = TimeSpan.FromSeconds(60)
-        }
-    });
-
+    // Only connect to WordleGameServer
+    var channel = GrpcChannel.ForAddress("http://localhost:5031");
     var client = new DailyWordle.DailyWordleClient(channel);
+
     Console.WriteLine("🟢 Connected! Let's play Wordle!\n");
 
-    // Create the streaming call
     using var call = client.Play();
 
     // Response handler
@@ -29,20 +21,38 @@ try
         {
             await foreach (var response in call.ResponseStream.ReadAllAsync())
             {
-                if (response.Result == "invalid")
-                {
-                    Console.WriteLine("❌ Not a valid word");
-                    return;
-                }
+                Console.Clear();
+                Console.WriteLine($"WORDLE - Guesses left: {response.GuessesRemaining}\n");
 
-                Console.WriteLine($"\n📊 Result: {response.Result}");
-                Console.WriteLine($"✅ Correct: {string.Join("", response.IncludedLetters)}");
-                Console.WriteLine($"❌ Wrong: {string.Join("", response.ExcludedLetters)}");
-                Console.WriteLine($"💡 Guesses left: {response.GuessesRemaining}");
+                // Display result pattern
+                Console.WriteLine($"Result: {response.Result}");
+
+                // Display keyboard status
+                Console.WriteLine("\nIncluded letters: " + string.Join("", response.IncludedLetters));
+                Console.WriteLine("Excluded letters: " + string.Join("", response.ExcludedLetters));
+                Console.WriteLine("Available letters: " + string.Join("", response.AvailableLetters));
 
                 if (response.GameOver)
                 {
-                    Console.WriteLine(response.GameWon ? "🎉 You won!" : "💀 Game over!");
+                    Console.WriteLine(response.GameWon ? "\n🎉 You won!" : "\n💀 Game over!");
+
+                    if (response.GameWon)
+                    {
+                        Console.WriteLine($"You guessed it in {6 - response.GuessesRemaining} tries!");
+                    }
+                    else
+                    {
+                        // Get the word through stats endpoint (proper way)
+                        Console.WriteLine($"The word was: {(await client.GetStatsAsync(new StatsRequest())).CurrentWord}");
+                    }
+
+                    // Show statistics
+                    var stats = await client.GetStatsAsync(new StatsRequest());
+                    Console.WriteLine("\nStatistics:");
+                    Console.WriteLine($"Total players today: {stats.TotalPlayers}");
+                    Console.WriteLine($"Win percentage: {stats.WinPercentage:F1}%");
+                    Console.WriteLine($"Average guesses (winners): {stats.AverageGuesses:F1}");
+
                     return;
                 }
             }
@@ -56,7 +66,7 @@ try
     // Game loop
     while (true)
     {
-        Console.Write("\n⌨️ Your guess (5 letters): ");
+        Console.Write("\n⌨️ Your guess (5 letters, 'quit' to exit): ");
         var guess = Console.ReadLine()?.Trim().ToLower();
 
         if (guess == "quit") break;
@@ -75,7 +85,6 @@ try
         if (readTask.IsCompleted) break;
     }
 
-    // Clean shutdown
     await call.RequestStream.CompleteAsync();
     await readTask;
 }

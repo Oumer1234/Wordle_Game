@@ -20,41 +20,64 @@ namespace WordServer.Services
         public DailyWordService(ILogger<DailyWordService> logger)
         {
             _logger = logger;
+            Console.WriteLine("🟢 DailyWordService is starting...");
+            _logger.LogInformation("DailyWordService is starting...");
 
             // ✅ Ensure the Data directory exists
             Directory.CreateDirectory(Path.GetDirectoryName(_jsonPath));
+            _logger.LogInformation($"Checking for wordle.json at: {_jsonPath}");
 
-            // ✅ Handle file not found without crashing the server
+            // ✅ Check if `wordle.json` exists
             if (!File.Exists(_jsonPath))
             {
-                _logger.LogError("❌ `wordle.json` is missing! Expected at: {JsonPath}", _jsonPath);
-                Console.WriteLine("⚠️ WARNING: `wordle.json` is missing. Word service will not function correctly.");
+                var errorMsg = "❌ `wordle.json` is missing!";
+                Console.WriteLine(errorMsg);
+                _logger.LogError(errorMsg);
                 return;
             }
 
             try
             {
+                _logger.LogInformation("📂 Loading `wordle.json`...");
                 var json = File.ReadAllText(_jsonPath);
                 _words = JsonSerializer.Deserialize<List<string>>(json) ?? new List<string>();
 
                 if (_words.Count == 0)
                 {
-                    _logger.LogError("❌ `wordle.json` is empty or contains invalid data.");
-                    Console.WriteLine("⚠️ WARNING: `wordle.json` is empty or invalid.");
+                    var warningMsg = "⚠️ `wordle.json` is empty!";
+                    Console.WriteLine(warningMsg);
+                    _logger.LogWarning(warningMsg);
                     return;
                 }
 
                 _isJsonLoaded = true;
+                var successMsg = "✅ `wordle.json` loaded successfully!";
+                Console.WriteLine(successMsg);
+                _logger.LogInformation(successMsg);
+
                 UpdateDailyWord();
-                _logger.LogInformation("✅ `wordle.json` loaded successfully!");
+                var dailyWordMsg = $"🔍 Daily Word: {_dailyWord}";
+                Console.WriteLine(dailyWordMsg);
+                _logger.LogInformation(dailyWordMsg);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error loading `wordle.json`.");
-                Console.WriteLine("⚠️ WARNING: Failed to load `wordle.json`. Check file format.");
+                var errorMsg = $"❌ Error loading `wordle.json`: {ex.Message}";
+                Console.WriteLine(errorMsg);
+                _logger.LogError(ex, errorMsg);
             }
         }
+        public string GetDailyWord()
+        {
+            if (!_isJsonLoaded)
+            {
+                _logger.LogWarning("Word list not loaded - cannot get daily word");
+                return "ERROR: Word list not loaded";
+            }
 
+            UpdateDailyWord(); // Ensure we have the current word
+            return _dailyWord;
+        }
         public override Task<WordResponse> GetWord(WordRequest request, ServerCallContext context)
         {
             if (!_isJsonLoaded)
@@ -89,7 +112,9 @@ namespace WordServer.Services
                 var random = new Random();
                 _dailyWord = _words[random.Next(_words.Count)];
                 _lastUpdated = today;
+                Console.WriteLine($"🔍 Daily Word: {_dailyWord}"); // ✅ Log the daily word
             }
         }
+
     }
 }

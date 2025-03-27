@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|solutionrelative:wordlegameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|solutionrelative:wordlegameclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameserver\\services\\dailywordleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|solutionrelative:wordlegameserver\\services\\dailywordleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|solutionrelative:wordlegameclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|solutionrelative:wordserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordserver\\data\\wordle.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|solutionrelative:wordserver\\data\\wordle.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameclient\\wordlegameclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4481790A-3410-47BF-A357-59FD83309786}|WordleGameClient\\WordleGameClient.csproj|solutionrelative:wordlegameclient\\wordlegameclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordserver\\services\\dailywordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|solutionrelative:wordserver\\services\\dailywordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordserver\\protos\\dailyword.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{F61EE36F-2D5E-44AA-A9A4-D1400EE6CFA0}|WordServer\\WordServer.csproj|solutionrelative:wordserver\\protos\\dailyword.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|c:\\users\\lenovo\\onedrive\\desktop\\cpa3 winter\\component-based programming with .net5060\\second term\\wordlegrpc\\wordlegameserver\\protos\\dailywordle.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{86FAE415-D630-4375-A53F-04EECA0C9F74}|WordleGameServer\\WordleGameServer.csproj|solutionrelative:wordlegameserver\\protos\\dailywordle.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,58 +22,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Program.cs",
-              "RelativeDocumentMoniker": "WordServer\\Program.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Program.cs",
-              "RelativeToolTip": "WordServer\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T11:03:12.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "wordle.json",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Data\\wordle.json",
-              "RelativeDocumentMoniker": "WordServer\\Data\\wordle.json",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Data\\wordle.json",
-              "RelativeToolTip": "WordServer\\Data\\wordle.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-27T10:52:02.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\Program.cs",
-              "RelativeDocumentMoniker": "WordleGameClient\\Program.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\Program.cs",
-              "RelativeToolTip": "WordleGameClient\\Program.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAiwDwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T10:46:12.85Z",
+              "Title": "dailywordle.proto",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameServer\\Protos\\dailywordle.proto",
+              "RelativeDocumentMoniker": "WordleGameServer\\Protos\\dailywordle.proto",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameServer\\Protos\\dailywordle.proto",
+              "RelativeToolTip": "WordleGameServer\\Protos\\dailywordle.proto",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2025-03-27T21:13:47.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameServer\\Program.cs",
-              "RelativeDocumentMoniker": "WordleGameServer\\Program.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameServer\\Program.cs",
-              "RelativeToolTip": "WordleGameServer\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\Program.cs",
+              "RelativeDocumentMoniker": "WordleGameClient\\Program.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\Program.cs",
+              "RelativeToolTip": "WordleGameClient\\Program.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAcwB4AAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T10:46:05.182Z",
+              "WhenOpened": "2025-03-27T20:59:20.051Z",
               "EditorCaption": ""
             },
             {
@@ -104,9 +58,9 @@
               "RelativeDocumentMoniker": "WordleGameServer\\Services\\DailyWordleService.cs",
               "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameServer\\Services\\DailyWordleService.cs",
               "RelativeToolTip": "WordleGameServer\\Services\\DailyWordleService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAwBIAAAAfAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGQAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T10:21:48.603Z",
+              "WhenOpened": "2025-03-27T20:58:09.156Z",
               "EditorCaption": ""
             },
             {
@@ -116,45 +70,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DailyWordService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Services\\DailyWordService.cs",
-              "RelativeDocumentMoniker": "WordServer\\Services\\DailyWordService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Services\\DailyWordService.cs",
-              "RelativeToolTip": "WordServer\\Services\\DailyWordService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwA8AAABwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:43:42.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WordleGameClient",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\WordleGameClient.csproj",
-              "RelativeDocumentMoniker": "WordleGameClient\\WordleGameClient.csproj",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordleGameClient\\WordleGameClient.csproj",
-              "RelativeToolTip": "WordleGameClient\\WordleGameClient.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-27T09:40:15.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dailyword.proto",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Protos\\dailyword.proto",
-              "RelativeDocumentMoniker": "WordServer\\Protos\\dailyword.proto",
-              "ToolTip": "C:\\Users\\LENOVO\\OneDrive\\Desktop\\CPA3 WINTER\\Component-based Programming with .NET5060\\Second Term\\WordleGRPC\\WordServer\\Protos\\dailyword.proto",
-              "RelativeToolTip": "WordServer\\Protos\\dailyword.proto",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
-              "WhenOpened": "2025-03-27T09:38:34.439Z",
-              "EditorCaption": ""
             }
           ]
         },

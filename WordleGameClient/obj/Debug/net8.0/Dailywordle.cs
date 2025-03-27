@@ -29,20 +29,21 @@ namespace WordleGameServer.Protos {
             "GAEgASgJEhgKEGluY2x1ZGVkX2xldHRlcnMYAiADKAkSGAoQZXhjbHVkZWRf",
             "bGV0dGVycxgDIAMoCRIZChFhdmFpbGFibGVfbGV0dGVycxgEIAMoCRIRCgln",
             "YW1lX292ZXIYBSABKAgSEAoIZ2FtZV93b24YBiABKAgSGQoRZ3Vlc3Nlc19y",
-            "ZW1haW5pbmcYByABKAUiDgoMU3RhdHNSZXF1ZXN0IlcKDVN0YXRzUmVzcG9u",
+            "ZW1haW5pbmcYByABKAUiDgoMU3RhdHNSZXF1ZXN0Im0KDVN0YXRzUmVzcG9u",
             "c2USFQoNdG90YWxfcGxheWVycxgBIAEoBRIWCg53aW5fcGVyY2VudGFnZRgC",
-            "IAEoAhIXCg9hdmVyYWdlX2d1ZXNzZXMYAyABKAIyjwEKC0RhaWx5V29yZGxl",
-            "Ej8KBFBsYXkSGC53b3JkbGVHYW1lLkd1ZXNzUmVxdWVzdBoZLndvcmRsZUdh",
-            "bWUuR3Vlc3NSZXNwb25zZSgBMAESPwoIR2V0U3RhdHMSGC53b3JkbGVHYW1l",
-            "LlN0YXRzUmVxdWVzdBoZLndvcmRsZUdhbWUuU3RhdHNSZXNwb25zZUIaqgIX",
-            "V29yZGxlR2FtZVNlcnZlci5Qcm90b3NiBnByb3RvMw=="));
+            "IAEoAhIXCg9hdmVyYWdlX2d1ZXNzZXMYAyABKAISFAoMY3VycmVudF93b3Jk",
+            "GAQgASgJMo8BCgtEYWlseVdvcmRsZRI/CgRQbGF5Ehgud29yZGxlR2FtZS5H",
+            "dWVzc1JlcXVlc3QaGS53b3JkbGVHYW1lLkd1ZXNzUmVzcG9uc2UoATABEj8K",
+            "CEdldFN0YXRzEhgud29yZGxlR2FtZS5TdGF0c1JlcXVlc3QaGS53b3JkbGVH",
+            "YW1lLlN0YXRzUmVzcG9uc2VCGqoCF1dvcmRsZUdhbWVTZXJ2ZXIuUHJvdG9z",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::WordleGameServer.Protos.GuessRequest), global::WordleGameServer.Protos.GuessRequest.Parser, new[]{ "Guess" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WordleGameServer.Protos.GuessResponse), global::WordleGameServer.Protos.GuessResponse.Parser, new[]{ "Result", "IncludedLetters", "ExcludedLetters", "AvailableLetters", "GameOver", "GameWon", "GuessesRemaining" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WordleGameServer.Protos.StatsRequest), global::WordleGameServer.Protos.StatsRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WordleGameServer.Protos.StatsResponse), global::WordleGameServer.Protos.StatsResponse.Parser, new[]{ "TotalPlayers", "WinPercentage", "AverageGuesses" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::WordleGameServer.Protos.StatsResponse), global::WordleGameServer.Protos.StatsResponse.Parser, new[]{ "TotalPlayers", "WinPercentage", "AverageGuesses", "CurrentWord" }, null, null, null, null)
           }));
     }
     #endregion
@@ -805,6 +806,7 @@ namespace WordleGameServer.Protos {
       totalPlayers_ = other.totalPlayers_;
       winPercentage_ = other.winPercentage_;
       averageGuesses_ = other.averageGuesses_;
+      currentWord_ = other.currentWord_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -850,6 +852,18 @@ namespace WordleGameServer.Protos {
       }
     }
 
+    /// <summary>Field number for the "current_word" field.</summary>
+    public const int CurrentWordFieldNumber = 4;
+    private string currentWord_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CurrentWord {
+      get { return currentWord_; }
+      set {
+        currentWord_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -868,6 +882,7 @@ namespace WordleGameServer.Protos {
       if (TotalPlayers != other.TotalPlayers) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(WinPercentage, other.WinPercentage)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AverageGuesses, other.AverageGuesses)) return false;
+      if (CurrentWord != other.CurrentWord) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -878,6 +893,7 @@ namespace WordleGameServer.Protos {
       if (TotalPlayers != 0) hash ^= TotalPlayers.GetHashCode();
       if (WinPercentage != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(WinPercentage);
       if (AverageGuesses != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AverageGuesses);
+      if (CurrentWord.Length != 0) hash ^= CurrentWord.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -908,6 +924,10 @@ namespace WordleGameServer.Protos {
         output.WriteRawTag(29);
         output.WriteFloat(AverageGuesses);
       }
+      if (CurrentWord.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(CurrentWord);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -930,6 +950,10 @@ namespace WordleGameServer.Protos {
         output.WriteRawTag(29);
         output.WriteFloat(AverageGuesses);
       }
+      if (CurrentWord.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(CurrentWord);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -948,6 +972,9 @@ namespace WordleGameServer.Protos {
       }
       if (AverageGuesses != 0F) {
         size += 1 + 4;
+      }
+      if (CurrentWord.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CurrentWord);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -969,6 +996,9 @@ namespace WordleGameServer.Protos {
       }
       if (other.AverageGuesses != 0F) {
         AverageGuesses = other.AverageGuesses;
+      }
+      if (other.CurrentWord.Length != 0) {
+        CurrentWord = other.CurrentWord;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -997,6 +1027,10 @@ namespace WordleGameServer.Protos {
             AverageGuesses = input.ReadFloat();
             break;
           }
+          case 34: {
+            CurrentWord = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1022,6 +1056,10 @@ namespace WordleGameServer.Protos {
           }
           case 29: {
             AverageGuesses = input.ReadFloat();
+            break;
+          }
+          case 34: {
+            CurrentWord = input.ReadString();
             break;
           }
         }

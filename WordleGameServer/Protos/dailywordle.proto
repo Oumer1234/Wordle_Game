@@ -29,4 +29,5 @@ message StatsResponse {
   int32 total_players = 1;
   float win_percentage = 2;
   float average_guesses = 3;
+  string current_word = 4; 
 }

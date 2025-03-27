@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordleGameServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af486dca7bf87878f7179c62f324e29f833f8716")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+848b5ea55cde661b48360a2bd895075c646f1ed0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordleGameServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordleGameServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

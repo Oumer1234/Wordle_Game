@@ -1,5 +1,6 @@
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\appsettings.json
+C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\Data\wordle.json
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\WordServer.exe
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\WordServer.deps.json
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\WordServer.runtimeconfig.json
@@ -33,4 +34,3 @@ C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .N
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\obj\Debug\net8.0\WordServer.pdb
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\obj\Debug\net8.0\WordServer.genruntimeconfig.cache
 C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\obj\Debug\net8.0\ref\WordServer.dll
-C:\Users\LENOVO\OneDrive\Desktop\CPA3 WINTER\Component-based Programming with .NET5060\Second Term\WordleGRPC\WordServer\bin\Debug\net8.0\Data\wordle.json
